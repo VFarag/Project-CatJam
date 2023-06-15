@@ -16,12 +16,12 @@ struct MainScreenView: View {
                 ScanView()
                 .tabItem {
                     Text("Salut").foregroundColor(.white)
-                    Label("Scan", systemImage: "play.circle.fill")
+                    Label("Scan", systemImage: "music.quarternote.3")
                 }
 
                 HistoryView()
                 .tabItem {
-                    Label("Récents", systemImage: "play.circle.fill")
+                    Label("Récents", systemImage: "music.note.list")
                 }
 
             }

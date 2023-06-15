@@ -23,8 +23,4 @@ struct HistoryCell: View {
     }
 }
 
-struct HistoryCell_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryCell()
-    }
-}
+
