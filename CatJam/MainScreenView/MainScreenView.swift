@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    let systemIconPlay = UIImage(systemName: "play.cirle.fill")?.withTintColor(.white)
 
     var body: some View {
+
         NavigationView {
             TabView {
                 ScanView()
                 .tabItem {
-                    Text("Salut").foregroundColor(.white)
                     Label("Scan", systemImage: "music.quarternote.3")
                 }
 
@@ -32,7 +31,7 @@ struct MainScreenView: View {
             //.accentColor(.red)
 
             /**/
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
