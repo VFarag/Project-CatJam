@@ -17,30 +17,50 @@ struct ShazamView: View {
     @StateObject private var viewModel: ShazamViewModel = .init()
 
     var body: some View {
-        content
-            .sheet(item: $viewModel.mediaItem) { mediaItem in
-                MediaItemView(mediaItem: mediaItem)
+        //ZStack {
+            if (viewModel.mediaItem == nil) {
+                content
+            } else {
+                NavigationView {
+                    SearchResultView(mediaItem: viewModel.mediaItem)
+                }.navigationBarBackButtonHidden(true)
             }
-            .alert(isPresented: $viewModel.hasError) {
-                Alert(title: Text("Error"), message: Text(viewModel.error?.localizedDescription ?? ""))
-            }
+        //}.onAppear {
+            //viewModel.mediaItem = .init()
+        //}
     }
 
     @ViewBuilder
     var content: some View {
         if viewModel.matching {
-            ProgressView("Matching...")
+            SearchView()
         }
         else {
-            VStack(spacing: 32) {
-                Image("shazamkit")
-                Button(action: shazam) {
-                    Text("Shazam")
-                        .padding()
+            VStack() {
+                ZStack {
+                    Color.black.ignoresSafeArea()
+                    VStack (alignment: .center, spacing: 16, content: {
+                        Text("CAT JAM")
+                        //.font(.custom("Chalkboard", size: 30))
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                        
+                        
+                        Text("Cliquez pour Cat Jammer")
+                            .foregroundColor(.white)
+                            .padding(.bottom, 250)
+                        
+                        Button(action: shazam) {
+                            NavigationLink(destination: SearchView(), label: {
+                            Image("catjamlogo_white")
+                                .scaledToFill().frame(width: 200, height: 200)
+                                .padding(.bottom, 100)
+                            })
+                        }
+                        
+                    })
                 }
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
             }
         }
     }
