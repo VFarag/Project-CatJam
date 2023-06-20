@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SearchViewModel.swift
 //  CatJam
 //
 //  Created by Véronique FARAG on 19/06/2023.
