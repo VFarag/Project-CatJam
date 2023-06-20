@@ -1,5 +1,8 @@
 //
-//  Created by Artem Novichkov on 10.06.2021.
+//  ScanView.swift
+//  CatJam
+//
+//  Created by Véronique FARAG on 14/06/2023.
 //
 
 import SwiftUI
@@ -16,21 +19,40 @@ struct ShazamView: View {
 
     @StateObject private var viewModel: SearchViewModel = .init()
 
-    @StateObject public var history: History = .init()
+    @State public var history: History
+    @State private var selectedTab = 0
 
     var body: some View {
+        
         //ZStack {
-            if (viewModel.mediaItem == nil) {
-                content
-            } else {
-                SearchResultView(mediaItem: viewModel.mediaItem, history: history)
-                /*NavigationView {
-                    SearchResultView(mediaItem: viewModel.mediaItem)
-                }.navigationBarBackButtonHidden(true)
-                 */
-            }
+        if (viewModel.mediaItem == nil) {
+            content
+                TabView(selection: $selectedTab) {
+                    // Premier onglet : Scan
+                    SearchView()
+                        .tabItem {
+                            Label("Scan", systemImage: "music.quarternote.3")
+                        }
+                        .tag(0)
+
+                    // Deuxième onglet : Récents
+                    HistoryView()
+                        .tabItem {
+                            Label("Récents", systemImage: "music.note.list")
+                        }
+                        .tag(1)
+                }
+                .accentColor(.red)
+                .navigationBarBackButtonHidden(true)
+        } else {
+            SearchResultView(viewModel: viewModel, mediaItem: viewModel.mediaItem, history: history)
+            /*NavigationView {
+             SearchResultView(mediaItem: viewModel.mediaItem)
+             }.navigationBarBackButtonHidden(true)
+             */
+        }
         //}.onAppear {
-            //viewModel.mediaItem = .init()
+        //viewModel.mediaItem = .init()
         //}
     }
 
@@ -56,18 +78,21 @@ struct ShazamView: View {
                             .padding(.bottom, 250)
                         
                         Button(action: shazam) {
-                            NavigationLink(destination: SearchView(), label: {
                             Image("catjamlogo_white")
                                 .scaledToFill().frame(width: 200, height: 200)
                                 .padding(.bottom, 100)
+                            /*NavigationLink(destination: SearchView(), label: {
+                                Image("catjamlogo_white")
+                                    .scaledToFill().frame(width: 200, height: 200)
+                                    .padding(.bottom, 100)
                             }
-                            
-                            ).navigationBarBackButtonHidden(true)
+                                           
+                            ).navigationBarBackButtonHidden(true)*/
                         }
                         
                     })
                 }
-            }
+            }.navigationBarBackButtonHidden(true)
         }
     }
 
@@ -75,10 +100,3 @@ struct ShazamView: View {
         viewModel.start()
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShazamView()
-    }
-}
-

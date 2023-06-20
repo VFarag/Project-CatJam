@@ -5,6 +5,7 @@
 //  Created by Véronique FARAG on 14/06/2023.
 //
 
+/*
 import SwiftUI
 
 struct ScanView: View {
@@ -39,3 +40,4 @@ struct ScanView: View {
 
     }
 }
+*/

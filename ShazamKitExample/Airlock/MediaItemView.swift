@@ -1,7 +1,7 @@
 //
 //  Created by Artem Novichkov on 10.06.2021.
 //
-
+/*
 import SwiftUI
 import ShazamKit
 
@@ -69,3 +69,4 @@ struct MediaItemView: View {
         }
     }
 }
+*/

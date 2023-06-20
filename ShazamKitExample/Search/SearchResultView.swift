@@ -10,9 +10,10 @@ import ShazamKit
 
 struct SearchResultView: View {
     @Environment(\.presentationMode) var presentation
-        
+    
+    @State var viewModel: SearchViewModel
     @State var mediaItem: SHMatchedMediaItem?
-    @State var history: History?
+    @State var history: History
     
         
 
@@ -34,7 +35,7 @@ struct SearchResultView: View {
                     Text(mediaItem?.artist ?? "Artiste non trouvé").font(.largeTitle).foregroundColor(.white).italic()
                     
                     HStack {
-                        Button(action: { self.presentation.wrappedValue.dismiss() })
+                        Button(action: { mediaItem = nil; viewModel.mediaItem = nil; ShazamView(history: history) })
                             {
                                 Label("Home", systemImage: "music.note.house")
                             }
@@ -46,8 +47,8 @@ struct SearchResultView: View {
                 }
             }.onAppear {
                 if mediaItem != nil {
-                    history?.push(newMusic: mediaItem!)
-                    print(history?.musicArray[0])
+                    history.push(newMusic: mediaItem!)
+                    print(history.musicArray)
                 }
             }
         }

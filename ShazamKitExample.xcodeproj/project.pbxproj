@@ -117,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				06465CD02672396B00A293EB /* MediaItemView.swift */,
+				92ACB6A32A40FCCB00AD9060 /* Music.swift */,
+				92ACB6A22A40FCCB00AD9060 /* Streaming.swift */,
 				92ACB6AA2A40FCF600AD9060 /* ScanView.swift */,
 			);
 			path = Airlock;
@@ -126,9 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				92ACB6A42A40FCCB00AD9060 /* History.swift */,
-				92ACB6A32A40FCCB00AD9060 /* Music.swift */,
 				92ACB6A12A40FCCB00AD9060 /* SearchViewModel.swift */,
-				92ACB6A22A40FCCB00AD9060 /* Streaming.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

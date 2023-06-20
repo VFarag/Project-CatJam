@@ -7,9 +7,11 @@ import SwiftUI
 
 @main
 struct ShazamKitExampleApp: App {
+    @StateObject public var history: History = .init()
+    
     var body: some Scene {
         WindowGroup {
-            ShazamView()
+            ShazamView(history: history)
         }
     }
 }
