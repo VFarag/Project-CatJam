@@ -1,7 +1,9 @@
 //
-//  Created by Artem Novichkov on 10.06.2021.
+//  ShazamKitExampleApp.swift
+//  CatJam
 //
-
+//  Created by Véronique FARAG on 14/06/2023.
+//
 
 import SwiftUI
 
