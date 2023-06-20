@@ -1,5 +1,5 @@
 //
-//  ScanView.swift
+//  ShazamView.swift
 //  CatJam
 //
 //  Created by Véronique FARAG on 14/06/2023.
