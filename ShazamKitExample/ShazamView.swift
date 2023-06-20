@@ -14,7 +14,7 @@ extension SHMatchedMediaItem: Identifiable {
 
 struct ShazamView: View {
 
-    @StateObject private var viewModel: ShazamViewModel = .init()
+    @StateObject private var viewModel: SearchViewModel = .init()
 
     var body: some View {
         //ZStack {
@@ -56,7 +56,9 @@ struct ShazamView: View {
                             Image("catjamlogo_white")
                                 .scaledToFill().frame(width: 200, height: 200)
                                 .padding(.bottom, 100)
-                            })
+                            }
+                            
+                            ).navigationBarBackButtonHidden(true)
                         }
                         
                     })

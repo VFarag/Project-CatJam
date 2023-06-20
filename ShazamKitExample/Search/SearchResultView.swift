@@ -33,52 +33,16 @@ struct SearchResultView: View {
                 HStack {
                     NavigationLink(destination: ShazamView(), label: {
                         Text("Retour").font(.largeTitle).foregroundColor(.white)
-                    }).navigationBarBackButtonHidden(true)
+                    })//.navigationBarBackButtonHidden(true)
                     
                     NavigationLink(destination: HistoryView(), label: {
                         Text("Récents Jams").font(.largeTitle).foregroundColor(.white)
-                        }).navigationBarBackButtonHidden(true)
+                        })//.navigationBarBackButtonHidden(true)
                     
                 }.padding(.top)
             }
-        }.onAppear {
+        }/*.onAppear {
             
-        }
+        }*/
     }
 }
-
-
-/*NavigationLink(destination: MainScreenView(), label: {
-    Text("Retour").font(.largeTitle).foregroundColor(.white)
-})*/
-/*
-NavigationLink(destination: HistoryView(), label: {
-    Text("Récents Jams").font(.largeTitle).foregroundColor(.white)
-})
- */
-
-/*
-TabView {
-    ScanView()
-        .tabItem {
-            Label("Scan", systemImage: "music.note.house")
-        }
-    
-    HistoryView()
-        .tabItem {
-            Label("Récents", systemImage: "music.note.list")
-        }
-}
- */
-
-
-/*
- HStack {
-     NavigationLink(destination: MainScreenView(), label: {
-         Text("Retour").font(.largeTitle).foregroundColor(.white)
-     })
-     
-     NavigationLink(destination: HistoryView(), label: {
-         Text("Récents Jams").font(.largeTitle).foregroundColor(.white)
-     })
- }*/

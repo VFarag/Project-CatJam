@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryCell: View {
-    @StateObject private var viewModel: ShazamViewModel = .init()
+    @StateObject private var viewModel: SearchViewModel = .init()
     
     
     var body: some View {

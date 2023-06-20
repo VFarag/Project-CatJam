@@ -12,17 +12,7 @@ struct SearchView: View {
     @StateObject private var viewModel: SearchViewModel = .init()
     
     var body: some View {
-        /*
-         Le Monsieur
-        content
-            .sheet(item: $viewModel.mediaItem) { mediaItem in
-                SearchResultView(mediaItem: mediaItem)
-            }
-            .alert(isPresented: $viewModel.hasError) {
-                Alert(title: Text("Error"), message: Text(viewModel.error?.localizedDescription ?? ""))
-            }
-        */
-        
+
         ZStack {
             Color.black.ignoresSafeArea()
             VStack (alignment: .center, spacing: 16, content: {
@@ -44,23 +34,6 @@ struct SearchView: View {
                 }.padding(.bottom, 0)
                 
             })
-            
-            
-            
-            /*
-            .sheet(item: $viewModel.mediaItem) { mediaItem in
-                NavigationLink(destination: SearchResultView(mediaItem: mediaItem), label: {
-                    Text("Trouvé skip")
-                        .font(.largeTitle).foregroundColor(.white)
-                })
-            }*/
-            
-            /*if let item = $viewModel.mediaItem { mediaItem in
-                NavigationLink(destination: SearchResultView(mediaItem: mediaItem), label: {
-                    Text("Trouvé skip")
-                        .font(.largeTitle).foregroundColor(.white)
-                })
-            }*/
             
         }.onAppear(perform:
             startJamming

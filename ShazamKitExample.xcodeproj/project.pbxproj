@@ -10,7 +10,6 @@
 		06465CC22672393C00A293EB /* ShazamKitExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06465CC12672393C00A293EB /* ShazamKitExampleApp.swift */; };
 		06465CC62672393D00A293EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06465CC52672393D00A293EB /* Assets.xcassets */; };
 		06465CC92672393D00A293EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06465CC82672393D00A293EB /* Preview Assets.xcassets */; };
-		06465CD22672396C00A293EB /* ShazamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06465CCF2672396B00A293EB /* ShazamViewModel.swift */; };
 		06465CD32672396C00A293EB /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06465CD02672396B00A293EB /* MediaItemView.swift */; };
 		06465CD42672396C00A293EB /* ShazamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06465CD12672396C00A293EB /* ShazamView.swift */; };
 		06465CD926723A8800A293EB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06465CD826723A8800A293EB /* AudioToolbox.framework */; };
@@ -32,7 +31,6 @@
 		06465CC12672393C00A293EB /* ShazamKitExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamKitExampleApp.swift; sourceTree = "<group>"; };
 		06465CC52672393D00A293EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06465CC82672393D00A293EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		06465CCF2672396B00A293EB /* ShazamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShazamViewModel.swift; sourceTree = "<group>"; };
 		06465CD02672396B00A293EB /* MediaItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
 		06465CD12672396C00A293EB /* ShazamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShazamView.swift; sourceTree = "<group>"; };
 		06465CD526723A1800A293EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				06465CC12672393C00A293EB /* ShazamKitExampleApp.swift */,
 				06465CD02672396B00A293EB /* MediaItemView.swift */,
 				06465CD12672396C00A293EB /* ShazamView.swift */,
-				06465CCF2672396B00A293EB /* ShazamViewModel.swift */,
 				06465CC52672393D00A293EB /* Assets.xcassets */,
 				06465CC72672393D00A293EB /* Preview Content */,
 			);
@@ -224,7 +221,6 @@
 				92ACB6A52A40FCCB00AD9060 /* SearchViewModel.swift in Sources */,
 				92ACB6A82A40FCCB00AD9060 /* History.swift in Sources */,
 				06465CD32672396C00A293EB /* MediaItemView.swift in Sources */,
-				06465CD22672396C00A293EB /* ShazamViewModel.swift in Sources */,
 				92ACB6AF2A40FD2C00AD9060 /* SearchResultView.swift in Sources */,
 				92ACB6AB2A40FCF600AD9060 /* ScanView.swift in Sources */,
 				92ACB6B82A40FDD800AD9060 /* GifImage.swift in Sources */,

@@ -28,7 +28,7 @@ struct ScanView: View {
                             .scaledToFill().frame(width: 200, height: 200)
                             .padding(.bottom, 100)
                         
-                    })
+                    })//.navigationBarBackButtonHidden(true)
                     
                     
                 })
