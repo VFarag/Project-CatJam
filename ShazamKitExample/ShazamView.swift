@@ -16,14 +16,18 @@ struct ShazamView: View {
 
     @StateObject private var viewModel: SearchViewModel = .init()
 
+    @StateObject public var history: History = .init()
+
     var body: some View {
         //ZStack {
             if (viewModel.mediaItem == nil) {
                 content
             } else {
-                NavigationView {
+                SearchResultView(mediaItem: viewModel.mediaItem, history: history)
+                /*NavigationView {
                     SearchResultView(mediaItem: viewModel.mediaItem)
                 }.navigationBarBackButtonHidden(true)
+                 */
             }
         //}.onAppear {
             //viewModel.mediaItem = .init()
@@ -77,3 +81,4 @@ struct ContentView_Previews: PreviewProvider {
         ShazamView()
     }
 }
+

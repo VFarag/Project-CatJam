@@ -8,14 +8,16 @@
 import Foundation
 import ShazamKit
 
-class History {
-    var musicID: [SHMatchedMediaItem]
+class History: ObservableObject {
+    @Published var musicArray: [SHMatchedMediaItem]
     
     init() {
-        self.musicID = []
+        self.musicArray = [SHMatchedMediaItem]()
     }
     
-    //push
+    func push (newMusic: SHMatchedMediaItem) {
+        self.musicArray.append(newMusic)
+    }
     
     //getmusicinfo
 }

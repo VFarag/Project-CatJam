@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @State var history: History?
+    
     var body: some View {
-        ZStack {
-            Color(.black).ignoresSafeArea()
-            VStack {
-                Text("My Jams")
-                    .foregroundColor(.white)
-                    .font(.largeTitle).padding(.top, 50)
-                ScrollView {
-                    VStack {
-                        ForEach((1...10), id: \.self) {
-                            _ in HistoryCell().padding(.top, 10)
+        NavigationView{
+            ZStack {
+                Color(.black).ignoresSafeArea()
+                VStack {
+                    Text("My Jams")
+                        .foregroundColor(.white)
+                        .font(.largeTitle).padding(.top, 50)
+                    ScrollView {
+                        VStack {
+                            
+                            ForEach((0...((history?.musicArray.count ?? 1)-1 )), id: \.self) {
+                                musicID in HistoryCell(currItem: history?.musicArray[musicID]).padding(.top, 10)
+                            }
                         }
-                    }
-                }.padding(.top, 50).padding(.bottom, 50)
+                    }.padding(.top, 50).padding(.bottom, 50)
+                }
             }
         }
+
     }
 }

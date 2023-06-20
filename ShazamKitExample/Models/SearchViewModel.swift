@@ -64,6 +64,7 @@ final class SearchViewModel: NSObject, ObservableObject {
                     }
                 }
             }
+        
         @unknown default:
             DispatchQueue.main.async {
                 self.error = ShazamError.unknown
@@ -86,7 +87,8 @@ final class SearchViewModel: NSObject, ObservableObject {
                 self.session.matchStreamingBuffer(buffer, at: time)
             }
             self.audioEngine.prepare()
-            try self.audioEngine.start()
+            try
+                self.audioEngine.start()
         }
         catch {
             print("Bug")

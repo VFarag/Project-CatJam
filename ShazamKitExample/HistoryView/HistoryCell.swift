@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import ShazamKit
 
 struct HistoryCell: View {
     @StateObject private var viewModel: SearchViewModel = .init()
+    var currItem: SHMatchedMediaItem?
     
+    init(currItem: SHMatchedMediaItem?) {
+        self.currItem = currItem
+    }
     
     var body: some View {
-        let mediaItem = viewModel.mediaItem
+        //let mediaItem = viewModel.mediaItem
+        let mediaItem = currItem
         ZStack {
             Color(.white)
             HStack {

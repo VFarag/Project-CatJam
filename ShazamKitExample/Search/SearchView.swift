@@ -9,37 +9,40 @@ import SwiftUI
 import ShazamKit
 
 struct SearchView: View {
-    @StateObject private var viewModel: SearchViewModel = .init()
+    //@StateObject private var viewModel: SearchViewModel = .init()
     
     var body: some View {
-
-        ZStack {
-            Color.black.ignoresSafeArea()
-            VStack (alignment: .center, spacing: 16, content: {
-                Text("CAT JAM")
-                //.font(.custom("Chalkboard", size: 30))
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .padding(.bottom, 10)
-                
-                Text("Searching ...")
-                    .foregroundColor(.white)
-                    .padding(.bottom, 150)
-                
-                ZStack {
-                    Image("catjamlogo_white")
-                        .scaledToFill().frame(width: 200, height: 200)
+        NavigationView{
+            ZStack {
+                Color.black.ignoresSafeArea()
+                VStack (alignment: .center, spacing: 16, content: {
+                    Text("CAT JAM")
+                    //.font(.custom("Chalkboard", size: 30))
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .padding(.bottom, 10)
                     
-                    GifImage("soundwave").frame(width: 400, height: 400).scaledToFill()
-                }.padding(.bottom, 0)
+                    Text("Searching ...")
+                        .foregroundColor(.white)
+                        .padding(.bottom, 150)
+                    
+                    ZStack {
+                        Image("catjamlogo_white")
+                            .scaledToFill().frame(width: 200, height: 200)
+                        
+                        GifImage("soundwave").frame(width: 400, height: 400).scaledToFill()
+                    }.padding(.bottom, 0)
+                    
+                })
                 
-            })
-            
-        }.onAppear(perform:
-            startJamming
-        )
-    }
+            }/*
+              .onAppear(perform:
+                startJamming
+            )*/
+        }
 
+    }
+/*
     @ViewBuilder
     var content: some View {
         if viewModel.matching {
@@ -62,6 +65,6 @@ struct SearchView: View {
     func startJamming() {
         viewModel.start()
     }
- 
+ */
 }
 

@@ -81,6 +81,7 @@
 		06465CC02672393C00A293EB /* ShazamKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				9207E23D2A41A884003E88F2 /* Airlock */,
 				92ACB6B72A40FDD800AD9060 /* GifImage.swift */,
 				92ACB6B02A40FD4200AD9060 /* soundwave.gif */,
 				92ACB6B22A40FD8900AD9060 /* HistoryView */,
@@ -89,7 +90,6 @@
 				06465CD626723A8800A293EB /* ShazamKitExample.entitlements */,
 				06465CD526723A1800A293EB /* Info.plist */,
 				06465CC12672393C00A293EB /* ShazamKitExampleApp.swift */,
-				06465CD02672396B00A293EB /* MediaItemView.swift */,
 				06465CD12672396C00A293EB /* ShazamView.swift */,
 				06465CC52672393D00A293EB /* Assets.xcassets */,
 				06465CC72672393D00A293EB /* Preview Content */,
@@ -113,6 +113,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9207E23D2A41A884003E88F2 /* Airlock */ = {
+			isa = PBXGroup;
+			children = (
+				06465CD02672396B00A293EB /* MediaItemView.swift */,
+				92ACB6AA2A40FCF600AD9060 /* ScanView.swift */,
+			);
+			path = Airlock;
+			sourceTree = "<group>";
+		};
 		92ACB69E2A40FC6400AD9060 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +136,8 @@
 		92ACB6A92A40FCE000AD9060 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				92ACB6AD2A40FD2C00AD9060 /* SearchResultView.swift */,
 				92ACB6AC2A40FD2C00AD9060 /* SearchView.swift */,
-				92ACB6AA2A40FCF600AD9060 /* ScanView.swift */,
+				92ACB6AD2A40FD2C00AD9060 /* SearchResultView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
