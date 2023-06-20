@@ -15,16 +15,19 @@ struct SearchResultView: View {
     @State var mediaItem: SHMatchedMediaItem?
     @State var history: History
     
-        
+    @State var isAdded: Bool = false
 
     var body: some View {
         NavigationView{
             ZStack {
                 Color(.black).ignoresSafeArea()
                 VStack {
-                    Text("CAT JAM").font(.largeTitle).foregroundColor(.red).bold()
+                    Text("CAT JAM").foregroundColor(Color(red: 0.94, green: 0.36, blue: 0.33))
+                        .bold()
+                        .font(.system(size: 36))
+                        .padding(.bottom, 5)
                     Text("Jam trouvé").font(.largeTitle).foregroundColor(.white).padding(.bottom, 80)
-                    Text(mediaItem?.title ?? "Musique").font(.largeTitle).foregroundColor(.gray).bold()
+                    Text(mediaItem?.title ?? "Musique").font(.largeTitle).foregroundColor(.white).bold()
                         .font(.system(size: 12))
                     AsyncImage(url: mediaItem?.artworkURL) { phase in
                         if let image = phase.image {
@@ -33,7 +36,6 @@ struct SearchResultView: View {
                     }.frame(width: 150, height: 150)
                     
                     Text(mediaItem?.artist ?? "Artiste non trouvé").font(.largeTitle).foregroundColor(.white).italic()
-                    
                     HStack {
                         Button(action: { mediaItem = nil; viewModel.mediaItem = nil; ShazamView(history: history) })
                             {
@@ -42,30 +44,17 @@ struct SearchResultView: View {
                         NavigationLink(destination: HistoryView(history: history)) {
                             Label("Récents", systemImage: "music.note.list")
                         }
-                     
-                    }
+                    }.padding(.bottom)
                 }
+
             }.onAppear {
-                if mediaItem != nil {
+                if (mediaItem != nil && !isAdded) {
                     history.push(newMusic: mediaItem!)
+                    isAdded = true
                     print(history.musicArray)
                 }
             }
+            
         }
-
     }
 }
-
-
-/*
-HStack {
-    NavigationLink(destination: ShazamView(), label: {
-        Text("Retour").font(.largeTitle).foregroundColor(.white)
-    })//.navigationBarBackButtonHidden(true)
-    
-    NavigationLink(destination: HistoryView(), label: {
-        Text("Récents Jams").font(.largeTitle).foregroundColor(.white)
-        })//.navigationBarBackButtonHidden(true)
-    
-}.padding(.top)
-*/

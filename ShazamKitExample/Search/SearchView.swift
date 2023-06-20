@@ -17,14 +17,14 @@ struct SearchView: View {
                 Color.black.ignoresSafeArea()
                 VStack (alignment: .center, spacing: 16, content: {
                     Text("CAT JAM")
-                    //.font(.custom("Chalkboard", size: 30))
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .padding(.bottom, 10)
+                        .foregroundColor(Color(red: 0.94, green: 0.36, blue: 0.33))
+                        .bold()
+                        .font(.system(size: 36))
+                        .padding(.bottom, 5)
                     
                     Text("Searching ...")
                         .foregroundColor(.white)
-                        .padding(.bottom, 150)
+                        .padding(.bottom, 75)
                     
                     ZStack {
                         Image("catjamlogo_white")

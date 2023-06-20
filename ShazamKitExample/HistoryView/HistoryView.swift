@@ -16,8 +16,10 @@ struct HistoryView: View {
                 Color(.black).ignoresSafeArea()
                 VStack {
                     Text("My Jams")
-                        .foregroundColor(.white)
-                        .font(.largeTitle).padding(.top, 50)
+                        .foregroundColor(Color(red: 0.94, green: 0.36, blue: 0.33))
+                        .bold()
+                        .font(.system(size: 36))
+                        .padding(.top, 50)
                     ScrollView {
                         VStack {
                             

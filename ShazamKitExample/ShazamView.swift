@@ -27,23 +27,6 @@ struct ShazamView: View {
         //ZStack {
         if (viewModel.mediaItem == nil) {
             content
-                TabView(selection: $selectedTab) {
-                    // Premier onglet : Scan
-                    SearchView()
-                        .tabItem {
-                            Label("Scan", systemImage: "music.quarternote.3")
-                        }
-                        .tag(0)
-
-                    // Deuxième onglet : Récents
-                    HistoryView()
-                        .tabItem {
-                            Label("Récents", systemImage: "music.note.list")
-                        }
-                        .tag(1)
-                }
-                .accentColor(.red)
-                .navigationBarBackButtonHidden(true)
         } else {
             SearchResultView(viewModel: viewModel, mediaItem: viewModel.mediaItem, history: history)
             /*NavigationView {
@@ -67,20 +50,22 @@ struct ShazamView: View {
                     Color.black.ignoresSafeArea()
                     VStack (alignment: .center, spacing: 16, content: {
                         Text("CAT JAM")
+                            .foregroundColor(Color(red: 0.94, green: 0.36, blue: 0.33))
+                            .bold()
+                            .font(.system(size: 36))
+                            .padding(.bottom, 5)
                         //.font(.custom("Chalkboard", size: 30))
-                            .foregroundColor(.white)
-                            .font(.largeTitle)
-                            .padding(.bottom, 10)
-                        
+
                         
                         Text("Cliquez pour Cat Jammer")
                             .foregroundColor(.white)
-                            .padding(.bottom, 250)
+                            .padding(.bottom, 100)
                         
                         Button(action: shazam) {
                             Image("catjamlogo_white")
                                 .scaledToFill().frame(width: 200, height: 200)
-                                .padding(.bottom, 100)
+                                .padding(.bottom, 50)
+                            
                             /*NavigationLink(destination: SearchView(), label: {
                                 Image("catjamlogo_white")
                                     .scaledToFill().frame(width: 200, height: 200)
@@ -89,7 +74,6 @@ struct ShazamView: View {
                                            
                             ).navigationBarBackButtonHidden(true)*/
                         }
-                        
                     })
                 }
             }.navigationBarBackButtonHidden(true)
